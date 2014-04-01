@@ -1,0 +1,62 @@
+
+/**
+ * Global Styles
+ * This is to hold a list of the color variables, 
+ * their couplings with page elements
+ * font style definitions
+ */
+
+
+/**
+ * Color Definitions
+ */
+
+@white: #fff;
+@black: #000;
+@orange: #FA6900;
+@peach: #F38630;
+@gray: #E0E4CC;
+@lightBlue: #A7DBD8;
+@blue: #69D2E7;
+
+/**
+ * End color definitions
+ */
+/**
+ * Color Couplings
+ */
+@headerColor: @gray;
+@backgroundColor: @gray;
+@headerBackground: @orange;
+@btn-success: @blue;
+@btn-success-hover: @lightBlue;
+
+/**
+ * end Color Couplings
+ */
+
+// fonts!
+@font-face{
+	font-family: 'quaverSans';
+	src: url('/fonts/QuaverSans.otf');
+}
+// end fonts!
+html {
+	body{
+    	height:100%;
+		h1 {
+			font-family: quaverSans,Arial,sans-serif;
+			font-size:80px;
+			color:@headerColor;
+		}
+		.lead{
+			color: @headerColor;
+		}
+		.btn-success{
+			background-color: @btn-success;
+			&:hover{
+				background-color: @btn-success-hover;
+			}
+		}
+	}
+}
