@@ -1,11 +1,21 @@
 'use strict';
 
 angular.module('compendiumjsApp')
-  .controller('ListCtrl', function ($scope, Appdata, $rootScope) {
+  .controller('listCtrl', function ($scope, Appdata, $rootScope) {
   		
-
-  		$scope.inputText = Appdata.inputText;
-
+  		$scope.appData = Appdata;
+      $scope.list = $scope.appData.data;
+      $scope.order = '';
+      $scope.random = function() {
+        var rand = Math.random();
+        if(rand >= 0){
+          return rand;
+        }
+        if(rand >= 100){
+          return 99;
+        }
+        return 0;
+      }
   		init();
 
   		function init(){
