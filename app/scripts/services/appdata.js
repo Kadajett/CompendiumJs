@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('compendiumjsApp')
-  .service('Appdata', function Appdata($http, $q, $rootScope) {
+  .service('Appdata', function Appdata($http, $q, $rootScope, loggingService) {
   	var appData = this;
     appData.inputText = '';
     appData.deferred = $q.defer();
@@ -10,7 +10,7 @@ angular.module('compendiumjsApp')
 
   		 $http.jsonp('http://www.kimonolabs.com/api/cdwxcznk?apikey=b728d0f47eecaab0f810f9a49bd0b105&callback=JSON_CALLBACK')
   		 .success(function(data){
-        console.log(data);
+        
   		 	appData.deferred.resolve(data);
   		 }).error(function(){
   		 	appData.deferred.reject(data);
